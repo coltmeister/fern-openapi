@@ -314,8 +314,8 @@ function convertContainerType(containerType: ContainerType): OpenApiComponentSch
         },
         optional: (optionalType) => {
             return { 
+                ...convertTypeReference(optionalType),
                 nullable: true,
-                ...convertTypeReference(optionalType)
             };
         },
         literal: () => {
